@@ -3,6 +3,6 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/LD-l-atelier-LD-the-Workshop/',
+  base: '/LD-Workshop/',
   plugins: [vue()]
 })
