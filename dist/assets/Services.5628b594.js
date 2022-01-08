@@ -1,1 +1,0 @@
-import{_ as s}from"./index.6c968d77.js";import{o as r,c,a as e}from"./vendor.d16c91cd.js";const o={data(){return{}}},t={id:"services",class:"row"},a=e("div",{class:"col"},[e("h1",null,"Services"),e("br"),e("h2",null,`"Le meilleur de l'humain \xE0 votre service"`)],-1),n=[a];function d(i,_,l,p,u,v){return r(),c("div",t,n)}var h=s(o,[["render",d]]);export{h as default};
