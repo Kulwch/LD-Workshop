@@ -1,0 +1,1 @@
+import{_ as t}from"./index.3195d79a.js";import{o as e,c as o,a as s}from"./vendor.d16c91cd.js";const r={data(){return{}}},a={id:"arts",class:"row"},c=s("div",{class:"col"},[s("h1",null,"Arts")],-1),d=[c];function n(_,i,l,p,f,m){return e(),o("div",a,d)}var v=t(r,[["render",n]]);export{v as default};
