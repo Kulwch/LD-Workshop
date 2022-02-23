@@ -34,7 +34,7 @@
           class="d-flex flex-column nav-font align-items-center align-items-sm-start px-3 pt-2 min-vh-100"
         >
           <router-link
-            to="/"
+            to="/LD-Workshop"
             class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"
           >
             <span class="fs-6 d-none d-sm-inline text-white">Navigation</span>
@@ -44,14 +44,14 @@
             id="menu"
           >
             <li class="nav-item">
-              <a
-                href="#submenu1"
+              <button
+                data-bs-target="#submenu1"
                 data-bs-toggle="collapse"
+                @click="this.$router.push({ path: '/about' })"
                 class="nav-link text-white px-0 align-middle"
               >
-                <i class="fs-4 bi-house"></i>
                 <span class="ms-1 d-none d-sm-inline">A propos</span>
-              </a>
+              </button>
               <ul
                 class="collapse nav flex-column ms-1"
                 id="submenu1"
@@ -70,9 +70,10 @@
               </ul>
             </li>
             <li>
-              <a
-                href="#submenu2"
+              <button
+                data-bs-target="#submenu2"
                 data-bs-toggle="collapse"
+                @click="this.$router.push({ path: '/galerie' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <i class="fs-4 bi-speedometer2"></i>
@@ -82,7 +83,7 @@
                     >&nbsp Par ici !
                   </span>
                 </div>
-              </a>
+              </button>
               <ul
                 class="collapse nav flex-column ms-1"
                 id="submenu2"
@@ -101,9 +102,10 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a
-                href="#submenu3"
+              <button
+                data-bs-target="#submenu3"
                 data-bs-toggle="collapse"
+                @click="this.$router.push({ path: '/arts' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <i class="fs-4 bi-house"></i>
@@ -113,7 +115,7 @@
                     >&nbsp Par ici !
                   </span>
                 </div>
-              </a>
+              </button>
               <ul
                 class="collapse nav flex-column ms-1"
                 id="submenu3"
@@ -142,9 +144,10 @@
               </ul>
             </li>
             <li>
-              <a
-                href="#submenu4"
+              <button
+                data-bs-target="#submenu4"
                 data-bs-toggle="collapse"
+                @click="this.$router.push({ path: '/services' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <i class="fs-4 bi-bootstrap"></i>
@@ -154,7 +157,7 @@
                     >&nbsp Par là !
                   </span>
                 </div>
-              </a>
+              </button>
               <ul
                 class="collapse nav flex-column ms-1"
                 id="submenu4"
@@ -189,17 +192,18 @@
               </router-link>
             </li>
             <li>
-              <a
-                href="#submenu5"
+              <button
+                data-bs-target="#submenu5"
                 data-bs-toggle="collapse"
+                @click="this.$router.push({ path: '/memberspace' })"
                 class="nav-link text-white px-0 align-middle"
               >
-                <i class="fs-4 bi-grid"></i>
                 <span class="ms-1 d-none d-sm-inline"
                   >Espace <br />
                   membres</span
                 >
-              </a>
+              </button>
+
               <ul
                 class="collapse nav flex-column ms-1"
                 id="submenu5"

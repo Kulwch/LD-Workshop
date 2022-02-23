@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 
 const routes =[
     {
-    path: '/',
+    path: '/LD-Workshop',
     name: 'Home',
     component: Home
   },
@@ -12,18 +12,22 @@ const routes =[
     path: '/bio',
     name: 'Bio',
     component: () => import('../views/Bio.vue')
-  },
-  /*
+  },  
   {
     path: '/galerie',
     name: 'Galerie',
-    component: Galerie
+    component: () => import('../views/Galerie.vue')
   },
   {
     path: '/arts',
     name: 'Arts',
-    component: Arts
-  },*/
+    component: () => import('../views/Arts.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/About.vue')
+  },
   {
     path: '/services',
     name: 'Services',
@@ -35,7 +39,7 @@ const routes =[
     component: () => import('../views/LivreOr.vue')
   },
   {
-    path: '/MemberSpace',
+    path: '/memberSpace',
     name: 'MemberSpace',
     component: () => import('../views/MemberSpace.vue')
   },

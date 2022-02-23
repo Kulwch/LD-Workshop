@@ -1,7 +1,9 @@
 <template>
-  <div id="arts" class="row">
-    <div class="col">
-      <h1>Arts</h1>
+  <div class="container">
+    <div id="about" class="row">
+      <div class="col">
+        <h1>A propos</h1>
+      </div>
     </div>
   </div>
 </template>
