@@ -3,7 +3,7 @@
   <div class="d-flex align-items-center shadow-sm bg-dark">
     <img
       alt="photo de l'artiste LD en ange, avec des ailes de feutres"
-      src="./assets/ange.jpg"
+      src="./assets/portrait.jpg"
     />
     <img alt="dessin de sirène par LD" src="./assets/sirène.png" />
 
