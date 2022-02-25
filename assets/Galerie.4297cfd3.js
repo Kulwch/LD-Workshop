@@ -1,0 +1,1 @@
+import{_ as o}from"./index.928faefa.js";import{o as s,c as a,a as e}from"./vendor.d16c91cd.js";const r={data(){return{}}},t={id:"galerie",class:"row"},c=e("div",{class:"col"},[e("h1",null,"Galerie")],-1),n=[c];function d(i,_,l,f,p,m){return s(),a("div",t,n)}var v=o(r,[["render",d]]);export{v as default};
