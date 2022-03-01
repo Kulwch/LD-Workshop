@@ -250,6 +250,13 @@
           </ul>
           <hr />
         </div>
+        <div>
+          <span
+            class="fa fa-instagram icon-md mobile-tap"
+            role="img"
+            aria-label="lien vers Instagram"
+          ></span>
+        </div>
       </div>
       <div class="col py-3"><router-view /></div>
     </div>

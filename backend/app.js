@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const usersRoutes = require('./routes/users');
 const mediasRoutes = require('./routes/medias');
-
+const commentsRoutes = require('./routes/comments');
 
 const helmet = require('helmet');
 

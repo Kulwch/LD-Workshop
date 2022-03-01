@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Media.init({
-    id: DataTypes.INTEGER,
+   
     title: DataTypes.STRING,
     text: DataTypes.STRING,
     media: DataTypes.STRING

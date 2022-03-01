@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-//const auth = require('../middleware/auth');
-//const adminAuth = require('../middleware/adminAuth');
-//const connectLimiter = require('../middleware/connectLimiter');
+const auth = require('../middleware/auth');
+const adminAuth = require('../middleware/adminAuth');
+const connectLimiter = require('../middleware/connectLimiter');
 const multerUsers = require('../middleware/multer-users');
 
 const userCtrl = require('../controllers/users');
