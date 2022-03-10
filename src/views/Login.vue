@@ -45,10 +45,10 @@ export default {
           password: document.getElementById("password").value,
         })
         .then((res) => {
-          sessionStorage.setItem("token", res.data.token);
-          sessionStorage.setItem("userId", res.data.userId);
-          sessionStorage.setItem("isAdmin", res.data.isAdmin);
-          this.$router.push("/medias");
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("userId", res.data.userId);
+          localStorage.setItem("isAdmin", res.data.isAdmin);
+          this.$router.push("/Home");
         })
         .catch(() => {
           this.errorAlert = true;

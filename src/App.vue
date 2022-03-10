@@ -247,15 +247,19 @@
                 <span class="ms-1 d-none d-sm-inline">Contacts</span>
               </router-link>
             </li>
+            <li>
+              <span
+                class="icon-md mobile-tap fa-xl"
+                role="img"
+                aria-label="lien vers Instagram"
+                ><a
+                  href="https://www.instagram.com/lilith154/"
+                  class="link-light align-middle"
+                  ><fa :icon="['fab', 'instagram']" /></a
+              ></span>
+            </li>
           </ul>
           <hr />
-        </div>
-        <div>
-          <span
-            class="fa fa-instagram icon-md mobile-tap"
-            role="img"
-            aria-label="lien vers Instagram"
-          ></span>
         </div>
       </div>
       <div class="col py-3"><router-view /></div>
@@ -330,5 +334,10 @@ export default {
 .smallStyle {
   font-size: 0.7em !important;
   font-family: cursive;
+}
+
+a,
+a:visited {
+  text-decoration: none !important;
 }
 </style>

@@ -11,6 +11,10 @@
         l'artiste de partager son temps, de continuer dans cette démarche de recherche et
         d'expression, ainsi que ces partages d'émotions sur "papier".
       </p>
+      <br />
+      <router-link to="/login" v-if="!token"
+        >Se connecter pour accéder à l'espace membres</router-link
+      >
     </div>
   </div>
 </template>
@@ -18,7 +22,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      token: localStorage.getItem("token"),
+    };
   },
 };
 </script>
