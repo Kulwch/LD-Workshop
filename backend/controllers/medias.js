@@ -20,8 +20,9 @@ exports.getOneMedia = (req, res, next) => {
 exports.createMedia = (req, res, next) => {
     db.Media.create({
         userId: getUserId(req),
-        statusText: req.body.statusText,
-        imageUrl: `${req.protocol}://${req.get('host')}/../medias/${req.file.filename}`,
+        title: req.body.title,
+        text: req.body.text,
+        mediaUrl: `${req.protocol}://${req.get('host')}/../medias/${req.file.filename}`,
     })
         .then(() => res.status(201).json({ message: 'media publié !' }))
         .catch((error) => res.status(400).json({ error }))

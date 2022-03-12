@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
    
     title: DataTypes.STRING,
     text: DataTypes.STRING,
-    media: DataTypes.STRING
+    mediaUrl: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Media',

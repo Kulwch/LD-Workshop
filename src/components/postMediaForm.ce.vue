@@ -8,12 +8,21 @@
       enctype="multipart/form-data"
     >
       <div class="mx-auto w-50 mb-3">
+        <label for="title" class="form-label">Titre :</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Tape ici ton titre..."
+        />
+      </div>
+      <div class="mx-auto w-50 mb-3">
         <label for="statusText" class="form-label">Texte :</label>
         <input
           type="text"
           class="form-control"
           id="text"
-          placeholder="Exemple: Quand on fait ceci..."
+          placeholder="Tape ici ton texte..."
         />
       </div>
       <div class="w-50 mx-auto mb-3">
@@ -40,7 +49,8 @@ export default {
   data() {
     return {
       userId: localStorage.getItem("userId"),
-      statusText: "",
+      title: "",
+      text: "",
       imageUrl: "",
       media: "",
       token: localStorage.getItem("token"),
@@ -54,6 +64,7 @@ export default {
     postMedia() {
       const formData = new FormData();
       formData.append("userId", parseInt(localStorage.getItem("userId")));
+      formData.append("title", document.getElementById("title").value);
       formData.append("text", document.getElementById("text").value);
       formData.append("media", this.media);
       axios
