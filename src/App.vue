@@ -63,9 +63,9 @@
                   </router-link>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-white px-0">
+                  <router-link to="/experiences" class="nav-link text-white px-0">
                     <span class="d-none d-sm-inline">Expériences</span> 2
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </li>

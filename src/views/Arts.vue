@@ -4,23 +4,16 @@
       <h1>Arts</h1>
       <postMediaForm></postMediaForm>
       <div
-        class="col mx-auto border border-dark rounded shadow mt-3"
+        class="col-md-10 mx-auto border border-dark rounded shadow mt-3"
         v-for="media in medias.slice().reverse()"
         :key="media.id"
       >
-        <figure class="mw-75">
-          <figcaption class="h4 text-danger">{{ media.text }}</figcaption>
-          <p
-            v-for="user in users.filter((user) => {
-              return user.id == media.userId;
-            })"
-          >
-            publié par
-            <strong>{{ user.firstName }} {{ user.lastName }}</strong>
-          </p>
-          <img class="mw-75" :src="media.mediaUrl" alt="media" />
+        <figure class="h-50 mw-75">
+          <figcaption class="h4 text-danger">{{ media.title }}</figcaption>
+          <img class="w-75" :src="media.mediaUrl" alt="media" />
         </figure>
-        <span v-if="userId == media.userId">
+        <p>{{ media.text }}</p>
+        <span v-if="user.isAdmin == true">
           <button
             class="mb-3 btn btn-secondary rounded"
             v-bind="media"
@@ -29,36 +22,6 @@
             Supprimer le media
           </button>
         </span>
-        <div v-if="comments">
-          <div
-            v-for="comment in comments.filter((comment) => {
-              return comment.mediaId == media.id;
-            })"
-            :key="comment.id"
-            class="bg-light rounded"
-          >
-            <p class="mb-2">
-              "{{ comment.content }}"
-              <span
-                v-for="user in users.filter((user) => {
-                  return user.id == comment.userId;
-                })"
-              >
-                par
-                <strong>{{ user.firstName }} {{ user.lastName }}</strong>
-              </span>
-            </p>
-            <span v-if="userId == comment.userId">
-              <button
-                class="mb-3 btn btn-secondary rounded"
-                @click.prevent="deleteComment(comment.id)"
-              >
-                Effacer le commentaire
-              </button>
-            </span>
-          </div>
-        </div>
-        <postComment v-bind="media"></postComment>
       </div>
     </div>
   </div>
@@ -93,8 +56,6 @@ export default {
     return {
       medias: [],
       media: {},
-      comments: [],
-      comment: {},
       content: {},
       userId: localStorage.getItem("userId"),
       users: [],

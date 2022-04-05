@@ -1,5 +1,5 @@
 <template>
-  <div class="col mx-auto border border-dark rounded shadow">
+  <div class="col-md-10 mx-auto border border-dark rounded shadow">
     <h2 class>Publier un media</h2>
     <form
       id="form"
@@ -59,7 +59,7 @@ export default {
   methods: {
     handleFileUpload() {
       this.media = this.$refs.media.files[0];
-      this.imageUrl = URL.createObjectURL(this.media);
+      this.mediaUrl = URL.createObjectURL(this.media);
     },
     postMedia() {
       const formData = new FormData();
