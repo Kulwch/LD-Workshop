@@ -13,19 +13,51 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  User.init({
-    
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: { 
+  User.init({    
+    firstName:{
       type: DataTypes.STRING,
-      unique: true
+      allowNull: false,
+      validate: {
+        is: /^[a-z]+$/i,
+        notEmpty: true,
+        len: [2,25]
+      }
     },
-    password: DataTypes.STRING,
-    isAdmin: DataTypes.BOOLEAN
+    lastName:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        is: /^[a-z]+$/i,
+        notEmpty: true,
+        len: [2,25]
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: 'email',
+      validate: {
+        isEmail: true,
+        notEmpty: true,
+        is: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      }
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   }, {
     sequelize,
     modelName: 'User',
+    paranoid: true,
   });
   return User;
 };
+

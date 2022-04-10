@@ -27,9 +27,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       required: true
     },
+    authorEmail: {
+      type: DataTypes.STRING,
+      required: true
+    }
   }, {
     sequelize,
     modelName: 'Comment',
+    paranoid: true
   });
   return Comment;
 };

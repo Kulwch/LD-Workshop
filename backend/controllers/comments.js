@@ -3,10 +3,10 @@ const getUserId = require("../utils/getUserId");
 
 exports.postComment = (req, res, next) => {    
     db.Comment.create({
-        
         text: req.body.text,
         authorFirstName: req.body.authorFirstName,
-        authorLastName: req.body.authorLastName
+        authorLastName: req.body.authorLastName,
+        authorEmail: req.body.authorEmail
     })
     .then(() => res.status(201).json({ message: 'commentaire publié !'}))
     .catch(error => res.status(400).json({ error }))   
