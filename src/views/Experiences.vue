@@ -2,7 +2,7 @@
   <div class="container">
     <div id="experiences" class="row">
       <div class="col">
-        <h1>Expériences</h1>
+        <h1 class="h1">Expériences</h1>
         <br />
         <p>
           C'est un parcours assez atypique qui a permis à Laëtitia d'acquérir un panel

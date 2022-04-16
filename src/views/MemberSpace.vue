@@ -1,7 +1,7 @@
 <template>
   <div id="memberSpace" class="row">
     <div class="col">
-      <h1>Espace membres</h1>
+      <h1 class="h1">Espace membres</h1>
       <br />
       <p>
         L'espace membres est dédié à tous les abonnés qui souhaiteraient aller plus loin
@@ -12,9 +12,7 @@
         d'expression, ainsi que ces partages d'émotions sur "papier".
       </p>
       <br />
-      <router-link to="/login" v-if="!token"
-        >Se connecter pour accéder à l'espace membres</router-link
-      >
+      <router-link to="/LD-Workshop/Login">Se connecter</router-link>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="col col-md-8 mx-auto mt-2 mb-2 border border-dark rounded shadow bg-light">
-    <h3 class="h5 mt-2">Laisser un commentaire dans le livre d'or</h3>
+    <h3 class="h5 mt-2">Laisser un commentaire dans le Livre d'or</h3>
     <form class="mt-3">
       <div class="mx-auto w-75 h-50 mb-3">
         <label for="text" class="form-label">Commentaire :</label>

@@ -9,62 +9,57 @@ const routes =[
     component: Home
   },
   {
-    path: '/bio',
+    path: '/LD-Workshop/bio',
     name: 'Bio',
     component: () => import('../views/Bio.vue')
   },  
   {
-    path: '/galerie',
+    path: '/LD-Workshop/galerie',
     name: 'Galerie',
     component: () => import('../views/Galerie.vue')
   },
   {
-    path: '/arts',
+    path: '/LD-Workshop/arts',
     name: 'Arts',
     component: () => import('../views/Arts.vue')
   },
   {
-    path: '/about',
+    path: '/LD-Workshop/about',
     name: 'About',
     component: () => import('../views/About.vue')
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import('../views/Login.vue')
-  },
-  {
-    path: '/signup',
+    path: '/LD-Workshop/signup',
     name: 'Signup',
     component: () => import('../views/Signup.vue')
   },
   {
-    path: '/registered',
+    path: '/LD-Workshop/registered',
     name: 'Registered',
     component: () => import('../views/Registered.vue')
   },
   {
-    path:'/experiences',
+    path:'/LD-Workshop/experiences',
     name: 'Experiences',
     component: () => import('../views/Experiences.vue')
   },
   {
-    path: '/services',
+    path: '/LD-Workshop/services',
     name: 'Services',
     component: () => import('../views/Services.vue')
   },
   {
-    path: '/livreOr',
+    path: '/LD-Workshop/livreOr',
     name: 'LivreOr',
     component: () => import('../views/LivreOr.vue')
   },
   {
-    path: '/memberSpace',
+    path: '/LD-Workshop/memberSpace',
     name: 'MemberSpace',
     component: () => import('../views/MemberSpace.vue')
   },
   {
-    path: '/contacts',
+    path: '/LD-Workshop/contacts',
     name: 'Contacts',
     component: () => import('../views/Contacts.vue')
   }

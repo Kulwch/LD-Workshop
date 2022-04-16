@@ -16,13 +16,13 @@
           role="button"
           class="h1 text-white text-decoration-none"
           @click="overHereActivated = true"
-          >d ' Arts</a
+          >Arts</a
         >
         <a
           role="button"
           class="h1 text-white text-decoration-none"
           @click="overThereActivated = true"
-          >de &nbsp Vie</a
+          >Vie</a
         >
       </div>
     </div>
@@ -37,7 +37,7 @@
             to="/LD-Workshop"
             class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"
           >
-            <span class="fs-6 d-none d-sm-inline text-white">Navigation</span>
+            <span class="fs-6 d-none d-sm-inline text-white">Accueil</span>
           </router-link>
           <ul
             class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
@@ -47,7 +47,7 @@
               <button
                 data-bs-target="#submenu1"
                 data-bs-toggle="collapse"
-                @click="this.$router.push({ path: '/about' })"
+                @click="this.$router.push({ path: '/LD-Workshop/about' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <span class="ms-1 d-none d-sm-inline">A propos</span>
@@ -58,12 +58,15 @@
                 data-bs-parent="#menu"
               >
                 <li class="w-100">
-                  <router-link to="/bio" class="nav-link text-white px-0">
+                  <router-link to="/LD-Workshop/bio" class="nav-link text-white px-0">
                     <span class="d-none d-sm-inline">Bio</span> 1
                   </router-link>
                 </li>
                 <li>
-                  <router-link to="/experiences" class="nav-link text-white px-0">
+                  <router-link
+                    to="/LD-Workshop/experiences"
+                    class="nav-link text-white px-0"
+                  >
                     <span class="d-none d-sm-inline">Expériences</span> 2
                   </router-link>
                 </li>
@@ -73,7 +76,7 @@
               <button
                 data-bs-target="#submenu2"
                 data-bs-toggle="collapse"
-                @click="this.$router.push({ path: '/galerie' })"
+                @click="this.$router.push({ path: '/LD-Workshop/galerie' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <i class="fs-4 bi-speedometer2"></i>
@@ -105,7 +108,7 @@
               <button
                 data-bs-target="#submenu3"
                 data-bs-toggle="collapse"
-                @click="this.$router.push({ path: '/arts' })"
+                @click="this.$router.push({ path: '/LD-Workshop/arts' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <i class="fs-4 bi-house"></i>
@@ -147,7 +150,7 @@
               <button
                 data-bs-target="#submenu4"
                 data-bs-toggle="collapse"
-                @click="this.$router.push({ path: '/services' })"
+                @click="this.$router.push({ path: '/LD-Workshop/services' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <i class="fs-4 bi-bootstrap"></i>
@@ -186,7 +189,10 @@
               </ul>
             </li>
             <li>
-              <router-link to="/livreOr" class="nav-link text-white px-0 align-middle">
+              <router-link
+                to="/LD-Workshop/livreOr"
+                class="nav-link text-white px-0 align-middle"
+              >
                 <i class="fs-4 bi-people"></i>
                 <span class="ms-1 d-none d-sm-inline">Livre d'or</span>
               </router-link>
@@ -195,7 +201,7 @@
               <button
                 data-bs-target="#submenu5"
                 data-bs-toggle="collapse"
-                @click="this.$router.push({ path: '/memberspace' })"
+                @click="this.$router.push({ path: '/LD-Workshop/memberSpace' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <span class="ms-1 d-none d-sm-inline"
@@ -242,7 +248,10 @@
               </ul>
             </li>
             <li>
-              <router-link to="/contacts" class="nav-link text-white px-0 align-middle">
+              <router-link
+                to="/LD-Workshop/contacts"
+                class="nav-link text-white px-0 align-middle"
+              >
                 <i class="fs-4 bi-people"></i>
                 <span class="ms-1 d-none d-sm-inline">Contacts</span>
               </router-link>
@@ -267,7 +276,7 @@
   </div>
   <div class="aside-stamp py-2 px-3 border bg-light">
     <aside>
-      <p class="h2">Générateur d'émotions</p>
+      <p class="h3">Générateur d'émotions</p>
     </aside>
   </div>
 </template>
@@ -306,7 +315,13 @@ export default {
   font-weight: bold !important;
 }
 
-.h2 {
+.h2,
+.h5,
+p {
+  font-family: "Sedgwick Ave", cursive;
+}
+
+.h3 {
   font-family: "Sacramento", cursive;
   font-weight: bold !important;
 }

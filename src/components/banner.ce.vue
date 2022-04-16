@@ -15,13 +15,13 @@
           role="button"
           class="h1 text-dark text-decoration-none"
           @click="showArts = !showArts"
-          >d' Arts</a
+          >Arts</a
         >
         <a
           role="button"
           class="h1 text-dark text-decoration-none"
           @click="showServices = !showServices"
-          >de Vie</a
+          >Vie</a
         >
       </div>
     </div>

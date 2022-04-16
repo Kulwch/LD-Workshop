@@ -2,9 +2,9 @@
   <div class="container">
     <div id="bio" class="row">
       <div class="col">
-        <h1>Bio</h1>
+        <h1 class="h1">Bio</h1>
         <br />
-        <h2>
+        <h2 class="h2">
           Bien à vous et surtout:<br />
           Merci...
         </h2>

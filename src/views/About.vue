@@ -2,7 +2,7 @@
   <div class="container">
     <div id="about" class="row">
       <div class="col">
-        <h1>A propos</h1>
+        <h1 class="h1">A propos</h1>
       </div>
     </div>
   </div>

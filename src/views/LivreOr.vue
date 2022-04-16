@@ -1,7 +1,7 @@
 <template>
   <div id="livreOr" class="row">
     <div class="col">
-      <h1>Livre d'Or</h1>
+      <h1 class="h1">Livre d&nbsp;'Or</h1>
       <br />
       <p>
         Vous avez déjà fait appel à nos services ou talents d'artiste ? N'hésitez pas à

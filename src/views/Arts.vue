@@ -1,7 +1,7 @@
 <template>
   <div id="arts" class="row">
     <div class="col">
-      <h1>Arts</h1>
+      <h1 class="h1">Arts</h1>
       <postMediaForm></postMediaForm>
       <div
         class="col-md-10 mx-auto border border-dark rounded shadow mt-3"

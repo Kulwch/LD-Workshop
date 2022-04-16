@@ -2,9 +2,9 @@
   <div class="container">
     <div id="home" class="row">
       <div class="col">
-        <h1>Accueil</h1>
+        <h1 class="h1">Accueil</h1>
         <br />
-        <h2>Bienvenue sur le site de l'Atelier:</h2>
+        <h2 class="h2">Bienvenue sur le site de l'Atelier:</h2>
         <p>
           Quelque soit la raison qui vous a conduite ici-bas sur notre petite planète,
           nous vous en remercions.<br />
