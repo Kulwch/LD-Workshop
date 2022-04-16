@@ -1,6 +1,6 @@
 <template>
   <div class="col col-md-8 mx-auto mt-2 mb-2 border border-dark rounded shadow bg-light">
-    <h3 class="h5 mt-2">Laisser un commentaire dans le Livre d'or</h3>
+    <h3 class="h5 mt-2">Laisser un commentaire dans le Livre d'0r</h3>
     <form class="mt-3">
       <div class="mx-auto w-75 h-50 mb-3">
         <label for="text" class="form-label">Commentaire :</label>
@@ -33,6 +33,13 @@
           ref="authorEmail"
           placeholder="Saisissez votre email "
         />
+        <label for="phone" class="form-label mt-2">Téléphone (facultatif) :</label>
+        <input
+          class="form-control email w-50 mx-auto"
+          name="Phone"
+          ref="Phone"
+          placeholder="Saisissez votre numéro de téléphone "
+        />
       </div>
       <button
         type="submit"
@@ -56,6 +63,8 @@ export default {
       text: "",
       authorFirstName: "",
       authorLastName: "",
+      email: "",
+      phone: "",
     };
   },
   methods: {
@@ -65,6 +74,8 @@ export default {
           text: this.$refs.text.value,
           authorFirstName: this.$refs.authorFirstName.value,
           authorLastName: this.$refs.authorLastName.value,
+          email: this.$refs.email.value,
+          phone: this.$refs.phone.value,
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + this.token,

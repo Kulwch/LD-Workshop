@@ -12,17 +12,25 @@
   </div>
   <postComments></postComments>
   <div class="col">
-    <div v-for="comment in comments" :key="comment.id" v-bind="comment">
+    <div v-for="comment in comments.slice().reverse()" :key="comment.id" v-bind="comment">
       <div class="col-10 mx-auto border border-dark rounded shadow mt-3">
-        <p>Commentaire n° {{ comment.id }}</p>
-        <p class="mb-2">
+        <p class="mt-2 mb-2">
           "{{ comment.text }}"
+          <br />
+          <br />
           <span>
             par
             <strong>{{ comment.authorFirstName }} {{ comment.authorLastName }}</strong>
           </span>
+          <br />
+          <span>Email: {{ comment.email }}</span
+          >&nbsp;<span v-if="user.isAdmin">Numéro de téléphone: {{ comment.phone }}</span>
         </p>
-        <button class="mb-2 rounded" @click.prevent="adminDeleteComment(comment.id)">
+        <button
+          v-if="user.isAdmin"
+          class="mb-2 rounded"
+          @click.prevent="adminDeleteComment(comment.id)"
+        >
           Supprimer
         </button>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-10 mx-auto border border-dark rounded shadow">
-    <h2 class>Publier un media</h2>
+    <h2 class="h2 mt-2">Publier un media</h2>
     <form
       id="form"
       class="mt-5"

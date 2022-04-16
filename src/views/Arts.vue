@@ -9,7 +9,7 @@
         :key="media.id"
       >
         <figure class="h-50 mw-75">
-          <figcaption class="h4 text-danger">{{ media.title }}</figcaption>
+          <figcaption class="h4 text-danger mt-2">{{ media.title }}</figcaption>
           <img class="w-75" :src="media.mediaUrl" alt="media" />
         </figure>
         <p>{{ media.text }}</p>

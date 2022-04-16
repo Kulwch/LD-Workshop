@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 
 const routes =[
     {
-    path: '/LD-Workshop',
+    path: '/LD-Workshop/Home',
     name: 'Home',
     component: Home
   },
@@ -24,9 +24,9 @@ const routes =[
     component: () => import('../views/Arts.vue')
   },
   {
-    path: '/LD-Workshop/about',
-    name: 'About',
-    component: () => import('../views/About.vue')
+    path:'/LD-Workshop/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/LD-Workshop/signup',

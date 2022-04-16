@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
     authorEmail: {
       type: DataTypes.STRING,
       required: true
+    },
+    authorPhoneNumber: {
+      type: DataTypes.STRING,
+      is: /^(0|\+33 )[1-9]([-. ]?[0-9]{2} ){3}([-. ]?[0-9]{2})$/,
     }
   }, {
     sequelize,

@@ -34,7 +34,7 @@
           class="d-flex flex-column nav-font align-items-center align-items-sm-start px-3 pt-2 min-vh-100"
         >
           <router-link
-            to="/LD-Workshop"
+            to="/LD-Workshop/Home"
             class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"
           >
             <span class="fs-6 d-none d-sm-inline text-white">Accueil</span>
@@ -47,10 +47,9 @@
               <button
                 data-bs-target="#submenu1"
                 data-bs-toggle="collapse"
-                @click="this.$router.push({ path: '/LD-Workshop/about' })"
                 class="nav-link text-white px-0 align-middle"
               >
-                <span class="ms-1 d-none d-sm-inline">A propos</span>
+                <span class="ms-1 d-none d-sm-inline">&Agrave; propos</span>
               </button>
               <ul
                 class="collapse nav flex-column ms-1"
@@ -59,7 +58,7 @@
               >
                 <li class="w-100">
                   <router-link to="/LD-Workshop/bio" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Bio</span> 1
+                    <span class="d-none d-sm-inline">Bio</span>
                   </router-link>
                 </li>
                 <li>
@@ -67,7 +66,7 @@
                     to="/LD-Workshop/experiences"
                     class="nav-link text-white px-0"
                   >
-                    <span class="d-none d-sm-inline">Expériences</span> 2
+                    <span class="d-none d-sm-inline">Expériences</span>
                   </router-link>
                 </li>
               </ul>
@@ -79,9 +78,9 @@
                 @click="this.$router.push({ path: '/LD-Workshop/galerie' })"
                 class="nav-link text-white px-0 align-middle"
               >
-                <i class="fs-4 bi-speedometer2"></i>
+                <i class="fs-4"></i>
                 <div :class="{ beating: overHereActivated }">
-                  <span class="ms-1 d-none d-sm-inline animated">Galerie</span>
+                  <span class="ms-1 d-none d-sm-inline">Galerie</span>
                   <span v-if="overHereActivated" class="smallStyle"
                     >&nbsp Par ici !
                   </span>
@@ -94,12 +93,12 @@
               >
                 <li class="w-100">
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Dessins</span> 1
+                    <span class="d-none d-sm-inline">Dessins</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Photos</span> 2
+                    <span class="d-none d-sm-inline">Photos</span>
                   </a>
                 </li>
               </ul>
@@ -111,7 +110,7 @@
                 @click="this.$router.push({ path: '/LD-Workshop/arts' })"
                 class="nav-link text-white px-0 align-middle"
               >
-                <i class="fs-4 bi-house"></i>
+                <i class="fs-4"></i>
                 <div :class="{ beating: overHereActivated }">
                   <span class="ms-1 d-none d-sm-inline">Arts</span>
                   <span v-if="overHereActivated" class="smallStyle"
@@ -126,22 +125,22 @@
               >
                 <li class="w-100">
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Portraits</span> 1
+                    <span class="d-none d-sm-inline">Portraits</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Oeuvres spéciales</span> 2
+                    <span class="d-none d-sm-inline">Oeuvres spéciales</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Shooting</span> 3
+                    <span class="d-none d-sm-inline">Shooting</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Boutique</span> 4
+                    <span class="d-none d-sm-inline">Boutique</span>
                   </a>
                 </li>
               </ul>
@@ -168,22 +167,22 @@
               >
                 <li class="w-100">
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Expérience</span> 1</a
+                    <span class="d-none d-sm-inline">Expérience</span></a
                   >
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Services d'aides</span> 2</a
+                    <span class="d-none d-sm-inline">Services d'aides</span></a
                   >
                 </li>
                 <li class="w-100">
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Planning</span> 3</a
+                    <span class="d-none d-sm-inline">Planning</span></a
                   >
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Paiement et CGV</span> 4</a
+                    <span class="d-none d-sm-inline">Paiement et CGV</span></a
                   >
                 </li>
               </ul>
@@ -217,32 +216,32 @@
               >
                 <li class="w-100">
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Arts</span> 1</a
+                    <span class="d-none d-sm-inline">Arts</span></a
                   >
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Photos</span> 2</a
+                    <span class="d-none d-sm-inline">Photos</span></a
                   >
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Naturel and explicit</span> 3</a
+                    <span class="d-none d-sm-inline">Naturel and explicit</span></a
                   >
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Abonnements</span> 4</a
+                    <span class="d-none d-sm-inline">Abonnements</span></a
                   >
                 </li>
                 <li class="w-100">
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">CGV</span> 1</a
+                    <span class="d-none d-sm-inline">CGV</span></a
                   >
                 </li>
                 <li>
                   <a href="#" class="nav-link text-white px-0">
-                    <span class="d-none d-sm-inline">Mot de l'artiste</span> 2</a
+                    <span class="d-none d-sm-inline">Mot de l'artiste</span></a
                   >
                 </li>
               </ul>
@@ -263,6 +262,7 @@
                 aria-label="lien vers Instagram"
                 ><a
                   href="https://www.instagram.com/lilith154/"
+                  target="_blank"
                   class="link-light align-middle"
                   ><fa :icon="['fab', 'instagram']" /></a
               ></span>
@@ -316,7 +316,9 @@ export default {
 }
 
 .h2,
+.h4,
 .h5,
+.form-label,
 p {
   font-family: "Sedgwick Ave", cursive;
 }
