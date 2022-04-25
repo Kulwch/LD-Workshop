@@ -1,17 +1,19 @@
 <template>
-  <!--<bannerSmall></bannerSmall>-->
   <div class="d-flex align-items-center shadow-sm bg-dark">
     <img
+      class="d-none d-md-block"
       alt="photo de l'artiste LD en ange, avec des ailes de feutres"
       src="./assets/portrait.jpg"
     />
     <img alt="dessin de sirène par LD" src="./assets/sirène.png" />
 
-    <div class="d-flex justify-content-evenly container-fluid">
-      <div class="col-md-8 d-flex align-items-center">
-        <p class="h1 text-white">L' Atelier</p>
+    <div class="flex-column d-flex flex-md-row justify-content-md-evenly container-fluid">
+      <div class="justify-content-center col-md-8 d-flex align-items-center">
+        <p class="h1 text-white smallH1">L' Atelier</p>
       </div>
-      <div class="d-flex flex-column align-items-center">
+      <div
+        class="flex-row justify-content-around d-flex flex-md-column align-items-center"
+      >
         <a
           role="button"
           class="h1 text-white text-decoration-none"
@@ -309,10 +311,20 @@ export default {
   right: 0px;
 }
 
-.h1 {
-  font-family: "Corinthia", cursive;
-  font-size: 4.5em !important;
-  font-weight: bold !important;
+@media screen and (max-width: 767px) {
+  .h1 {
+    font-family: "Corinthia", cursive;
+    font-size: 2.5em !important;
+    font-weight: bold !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .h1 {
+    font-family: "Corinthia", cursive;
+    font-size: 4.5em !important;
+    font-weight: bold !important;
+  }
 }
 
 .h2,
