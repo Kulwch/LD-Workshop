@@ -1,3 +1,5 @@
+/**Next step: trying to implement toggling menus on @mouseover */
+
 <template>
   <div class="d-flex align-items-center shadow-sm bg-dark">
     <img
@@ -17,12 +19,16 @@
         <a
           role="button"
           class="h1 text-white text-decoration-none"
+          @mouseover="overHereActivated = true"
+          @mouseleave="overHereActivated = false"
           @click="overHereActivated = true"
           >Arts</a
         >
         <a
           role="button"
           class="h1 text-white text-decoration-none"
+          @mouseover="overThereActivated = true"
+          @mouseleave="overThereActivated = false"
           @click="overThereActivated = true"
           >Vie</a
         >
@@ -51,7 +57,12 @@
                 data-bs-toggle="collapse"
                 class="nav-link text-white px-0 align-middle"
               >
-                <span class="ms-1 d-none d-sm-inline">&Agrave; propos</span>
+                <span
+                  class="ms-1 d-none d-sm-inline"
+                  @mouseover="expandOnHover()"
+                  @mouseleave="collapseOnLeave()"
+                  >&Agrave; propos</span
+                >
               </button>
               <ul
                 class="collapse nav flex-column ms-1"
@@ -287,6 +298,14 @@
 export default {
   name: "App",
   components: {},
+  methods: {
+    expandOnHover: function () {
+      //
+    },
+    collapseOnLeave: function () {
+      //
+    },
+  },
   data() {
     return {
       overHereActivated: false,

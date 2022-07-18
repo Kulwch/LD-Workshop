@@ -34,6 +34,11 @@ const routes =[
     component: () => import('../views/Signup.vue')
   },
   {
+    path: '/LD-Workshop/post',
+    name: 'Post',
+    component: () => import('../views/Post.vue')
+  },
+  {
     path: '/LD-Workshop/registered',
     name: 'Registered',
     component: () => import('../views/Registered.vue')

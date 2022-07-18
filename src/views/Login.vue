@@ -22,6 +22,9 @@
       <button type="submit" class="btn btn-primary" @click.prevent="login">
         Se connecter
       </button>
+      <router-link class="btn btn-primary" to="/LD-Workshop/Home"
+        >Retourner à l'accueil</router-link
+      >
     </form>
   </div>
 </template>
@@ -48,7 +51,11 @@ export default {
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("userId", res.data.userId);
           localStorage.setItem("isAdmin", res.data.isAdmin);
-          this.$router.push("/Home");
+          if (localStorage.getItem("isAdmin") == true) {
+            this.$router.push("/LD-Workshop/Post");
+          } else {
+            this.$router.push("/LD-Workshop/Home");
+          }
         })
         .catch(() => {
           this.errorAlert = true;
