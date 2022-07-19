@@ -1,4 +1,5 @@
-/**Next step: trying to implement toggling menus on @mouseover */
+/** *Next step: trying to implement toggling menus on @mouseover *Good thing would be to
+document the project */
 
 <template>
   <div class="d-flex align-items-center shadow-sm bg-dark">
@@ -37,7 +38,288 @@
   </div>
   <div class="container-fluid">
     <div class="row flex-nowrap">
-      <div class="col-auto col-md-2 col-xl-2 pl-sm-2 bg-dark">
+      <!-- Sidebar showing on small screens -->
+      <div
+        id="smallScreensNav"
+        class="d-block d-md-none nav-font align-items-center align-items-sm-start px-3 pt-2 w-25 bg-dark"
+      >
+        <button
+          class="btn text-white px-0 align-middle"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <fa class="fa-xl" :icon="['fas', 'house']" />
+        </button>
+        <div
+          class="offcanvas offcanvas-start w-50"
+          tabindex="-1"
+          id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Navigation</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div id="smallScreensNavMenu">
+              <div
+                class="d-flex flex-column nav-font align-items-center align-items-sm-start px-3 pt-2 min-vh-100"
+              >
+                <router-link
+                  to="/LD-Workshop/Home"
+                  class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"
+                >
+                  <span class="fs-4 text-dark">Accueil</span>
+                </router-link>
+                <ul
+                  class="nav nav-pills flex-column align-items-center align-items-sm-start"
+                  id="menu"
+                >
+                  <li class="nav-item">
+                    <button
+                      data-bs-target="#submenu1"
+                      data-bs-toggle="collapse"
+                      class="nav-link text-dark px-0 align-middle"
+                    >
+                      <span
+                        class="fs-4"
+                        @mouseover="expandOnHover()"
+                        @mouseleave="collapseOnLeave()"
+                        >&Agrave; propos</span
+                      >
+                    </button>
+                    <ul
+                      class="collapse nav flex-column fs-4"
+                      id="submenu1"
+                      data-bs-parent="#menu"
+                    >
+                      <li class="w-100">
+                        <router-link
+                          to="/LD-Workshop/bio"
+                          class="nav-link text-dark px-0"
+                        >
+                          <span class="">Bio</span>
+                        </router-link>
+                      </li>
+                      <li>
+                        <router-link
+                          to="/LD-Workshop/experiences"
+                          class="nav-link text-dark px-0"
+                        >
+                          <span class="">Expériences</span>
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button
+                      data-bs-target="#submenu2"
+                      data-bs-toggle="collapse"
+                      @click="this.$router.push({ path: '/LD-Workshop/galerie' })"
+                      class="nav-link text-dark px-0 align-middle"
+                    >
+                      <i class="fs-4"></i>
+                      <div :class="{ beating: overHereActivated }">
+                        <span class="fs-4">Galerie</span>
+                        <span v-if="overHereActivated" class="smallStyle"
+                          >&nbsp Par ici !
+                        </span>
+                      </div>
+                    </button>
+                    <ul
+                      class="collapse nav flex-column fs-4"
+                      id="submenu2"
+                      data-bs-parent="#menu"
+                    >
+                      <li class="w-100">
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Dessins</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Photos</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      data-bs-target="#submenu3"
+                      data-bs-toggle="collapse"
+                      @click="this.$router.push({ path: '/LD-Workshop/arts' })"
+                      class="nav-link text-dark px-0 align-middle"
+                    >
+                      <i class="fs-4"></i>
+                      <div :class="{ beating: overHereActivated }">
+                        <span class="fs-4">Arts</span>
+                        <span v-if="overHereActivated" class="smallStyle"
+                          >&nbsp Par ici !
+                        </span>
+                      </div>
+                    </button>
+                    <ul
+                      class="collapse nav flex-column fs-4"
+                      id="submenu3"
+                      data-bs-parent="#menu"
+                    >
+                      <li class="w-100">
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Portraits</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Oeuvres spéciales</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Shooting</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Boutique</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button
+                      data-bs-target="#submenu4"
+                      data-bs-toggle="collapse"
+                      @click="this.$router.push({ path: '/LD-Workshop/services' })"
+                      class="nav-link text-dark px-0 align-middle"
+                    >
+                      <i class="fs-4 bi-bootstrap"></i>
+                      <div :class="{ beating: overThereActivated }">
+                        <span class="fs-4">Services</span>
+                        <span v-if="overThereActivated" class="smallStyle"
+                          >&nbsp Par là !
+                        </span>
+                      </div>
+                    </button>
+                    <ul
+                      class="collapse nav flex-column ms-1"
+                      id="submenu4"
+                      data-bs-parent="#menu"
+                    >
+                      <li class="w-100">
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Expérience</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Services d'aides</span></a
+                        >
+                      </li>
+                      <li class="w-100">
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Planning</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Paiement et CGV</span></a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <router-link
+                      to="/LD-Workshop/livreOr"
+                      class="nav-link text-dark px-0 align-middle"
+                    >
+                      <i class="fs-4 bi-people"></i>
+                      <span class="fs-4">Livre d'or</span>
+                    </router-link>
+                  </li>
+                  <li>
+                    <button
+                      data-bs-target="#submenu5"
+                      data-bs-toggle="collapse"
+                      @click="this.$router.push({ path: '/LD-Workshop/memberSpace' })"
+                      class="nav-link text-dark px-0 align-middle"
+                    >
+                      <span class="fs-4"
+                        >Espace <br />
+                        membres</span
+                      >
+                    </button>
+
+                    <ul
+                      class="collapse nav flex-column fs-4"
+                      id="submenu5"
+                      data-bs-parent="#menu"
+                    >
+                      <li class="w-100">
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Arts</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Photos</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Naturel and explicit</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Abonnements</span></a
+                        >
+                      </li>
+                      <li class="w-100">
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">CGV</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="#" class="nav-link text-dark px-0">
+                          <span class="fs-4">Mot de l'artiste</span></a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <router-link
+                      to="/LD-Workshop/contacts"
+                      class="nav-link text-dark px-0 align-middle"
+                    >
+                      <i class="fs-4 bi-people"></i>
+                      <span class="fs-4">Contacts</span>
+                    </router-link>
+                  </li>
+                  <li>
+                    <span class="" role="img" aria-label="lien vers Instagram"
+                      ><a
+                        href="https://www.instagram.com/lilith154/"
+                        target="_blank"
+                        class="link-light align-middle"
+                        ><fa class="text-dark" :icon="['fab', 'instagram']" /></a
+                    ></span>
+                  </li>
+                </ul>
+                <hr />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-none d-md-block col-auto col-md-2 col-xl-2 pl-sm-2 bg-dark">
+        <!-- Sidebar displaying on screens > 768px -->
         <div
           class="d-flex flex-column nav-font align-items-center align-items-sm-start px-3 pt-2 min-vh-100"
         >
@@ -287,7 +569,7 @@
       <div class="col py-3"><router-view /></div>
     </div>
   </div>
-  <div class="aside-stamp py-2 px-3 border bg-light">
+  <div id="emotion" class="aside-stamp py-2 px-3 border bg-light">
     <aside>
       <p class="h3">Générateur d'émotions</p>
     </aside>
@@ -306,6 +588,7 @@ export default {
       //
     },
   },
+
   data() {
     return {
       overHereActivated: false,
@@ -335,6 +618,18 @@ export default {
     font-family: "Corinthia", cursive;
     font-size: 2.5em !important;
     font-weight: bold !important;
+  }
+
+  .nav-link {
+    padding: 0 !important;
+  }
+
+  .btn {
+    font-size: 1.25em !important;
+  }
+
+  #emotion {
+    display: none !important;
   }
 }
 
