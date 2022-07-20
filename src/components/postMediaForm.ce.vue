@@ -26,7 +26,7 @@
         />
       </div>
       <div class="w-50 mx-auto mb-3">
-        <label for="media" class="form-label pr-1">Media :</label>
+        <label for="media" class="form-label pr-1">Fichier à publier :</label>
         <input
           type="file"
           class="form-control-file mx-auto"
@@ -35,6 +35,13 @@
           ref="media"
           v-on:change="handleFileUpload()"
         />
+      </div>
+      <div class="w-50 mx-auto mb-3">
+        <label for="mediaType" class="form-label">Choisir le type du média :</label>
+        <select name="mediaTypeChoice">
+          <option value="drawing">Dessin</option>
+          <option value="photo">Photo</option>
+        </select>
       </div>
       <button type="submit" class="btn btn-primary mb-3" @click.prevent="postMedia">
         Publier

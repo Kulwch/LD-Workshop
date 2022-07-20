@@ -2,8 +2,7 @@
   <div id="arts" class="row">
     <div class="col">
       <h1 class="h1">Publier un media sur le site :</h1>
-      <postMediaForm></postMediaForm>
-      </div>
+      <postMediaForm />
     </div>
   </div>
 </template>
@@ -12,7 +11,7 @@
 import postMediaForm from "../components/postMediaForm.ce.vue";
 
 export default {
-  name: "Post",
+  name: "post",
   components: {
     postMediaForm,
   },

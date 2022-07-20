@@ -539,6 +539,15 @@ document the project */
                     <span class="d-none d-sm-inline">Mot de l'artiste</span></a
                   >
                 </li>
+                <li>
+                  <router-link
+                    to="/LD-Workshop/post"
+                    class="nav-link text-white px-0 align-middle"
+                  >
+                    <i class="fs-4 bi-people"></i>
+                    <span class="ms-1 d-none d-sm-inline">Publier un média</span>
+                  </router-link>
+                </li>
               </ul>
             </li>
             <li>
