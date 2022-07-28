@@ -1,7 +1,7 @@
 const db = require('../models/index');
 const getUserId = require("../utils/getUserId");
 
-exports.postContact = (req, res, next) => {    
+exports.postContact = (req, res, _next) => {    
     db.Contact.create({
         text: req.body.text,
         firstName: req.body.firstName,

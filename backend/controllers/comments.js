@@ -1,7 +1,7 @@
 const db = require('../models/index');
 const getUserId = require("../utils/getUserId");
 
-exports.postComment = (req, res, next) => {    
+exports.postComment = (_req, res, _next) => {    
     db.Comment.create({
         text: req.body.text,
         authorFirstName: req.body.authorFirstName,
@@ -12,7 +12,7 @@ exports.postComment = (req, res, next) => {
     .catch(error => res.status(400).json({ error }))   
 };
 
-exports.deleteComment = (req, res, next) => {   
+exports.deleteComment = (_req, res, _next) => {   
     db.Comment.findOne({where: { id: req.params.id}})
         .then(comment => {
             if(comment.userId !== getUserId(req)){
@@ -24,15 +24,15 @@ exports.deleteComment = (req, res, next) => {
     });
 };
 
-exports.getAllComments = (req, res, next) => {
+exports.getAllComments = (_req, res, _next) => {
     db.Comment.findAll()
         .then((comments) => res.status(200).json(comments))
         .catch(error => res.status(400).json({error}))
 };
 
-exports.adminDeleteComment = (req, res, next) => { 
+exports.adminDeleteComment = (_req, res, _next) => { 
     db.Comment.destroy({where: { id: req.params.id }})
             .then(() => res.status(200).json({ message: 'commentaire effacé !'}))
             .catch(error => res.status(400).json({error}))
-    .catch(error => res.status(403).json({ message: 'requête réservée aux admins'}))
+    .catch(_error => res.status(403).json({ message: 'requête réservée aux admins'}))
 };

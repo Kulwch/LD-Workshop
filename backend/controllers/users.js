@@ -5,7 +5,7 @@ const fs = require('fs');
 const getUserId = require('../utils/getUserId');
 const dotenv = require('dotenv').config();
 
-exports.signup = (req, res, next) => {
+exports.signup = (req, res, _next) => {
     if(!req.body.password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)){
         return res.status(400).json({ error : "le mot de passe n'est pas assez fort. Rappel: 8 lettres minimum, 1 chiffre minimum, 1 lettre majuscule minimum, 1 caractères spécial minimum"})
     }
@@ -23,7 +23,7 @@ exports.signup = (req, res, next) => {
     .catch(error => res.status(500).json({ error }))
 }
 
-exports.login = (req, res, next) => {
+exports.login = (req, res, _next) => {
     db.User.findOne({ where: {email: req.body.email}}).then((user) => {
         if(!user) {
             return res.status(401).json({message: 'Utilisateur non trouvé '});
@@ -52,19 +52,19 @@ exports.login = (req, res, next) => {
     .catch(error => res.status(500).json({ error }));
 };
 
-exports.getProfile = (req, res, next) => {
+exports.getProfile = (req, res, _next) => {
     db.User.findOne({attributes: ['id','firstName', 'lastName', 'email', 'avatarUrl', 'isAdmin'], where: {id: req.params.id}})
         .then(user => res.status(200).json({user}))
         .catch(error => res.status(404).json({error}))
 };
 
-exports.getAllProfiles = (req, res, next) => {
+exports.getAllProfiles = (_req, res, _next) => {
     db.User.findAll({attributes: ['id','firstName', 'lastName', 'email','avatarUrl', 'isAdmin']})
         .then(users => res.status(200).json({users}))
         .catch(error => res.status(404).json({error}))
 };
 
-exports.updateProfile = (req, res, next) => {
+exports.updateProfile = (req, res, _next) => {
     const userObject = req.file ?
         {
             ...req.body.user,
@@ -77,11 +77,11 @@ exports.updateProfile = (req, res, next) => {
             }
     user.update({...userObject}, {where: {id: req.params.id}})
             .then(() => res.status(200).json({message: "Profil modifié !"}))
-            .catch(error => res.status(401).json({message: 'Modification non autorisée !'}))
+            .catch(_error => res.status(401).json({message: 'Modification non autorisée !'}))
     });
 };
 
-exports.deleteProfile = (req, res, next) => {
+exports.deleteProfile = (req, res, _next) => {
     db.User.findOne({where: { id: req.params.id}})
         .then(user => {
             if(user.id !== getUserId(req)){
@@ -89,17 +89,17 @@ exports.deleteProfile = (req, res, next) => {
             }
     user.destroy({where: {id: req.params.id}})
         .then(() => res.status(200).json({message: 'Profil supprimé !'}))
-        .catch(error => res.status(401).json({message: 'Vous n\'êtes pas autorisé à supprimer ce profil !'}))
+        .catch(_error => res.status(401).json({message: 'Vous n\'êtes pas autorisé à supprimer ce profil !'}))
     });
 };
 
-exports.adminDeleteProfile = (req, res, next) => {
+exports.adminDeleteProfile = (req, res, _next) => {
     db.User.destroy({where: {id: req.params.id}})
         .then(() => res.status(200).json({message: 'Profil supprimé !'}))
-        .catch(error => res.status(403).json({message: 'Requête réservée aux admins'}))
+        .catch(_error => res.status(403).json({message: 'Requête réservée aux admins'}))
 };
 
-exports.adminUpdateProfile = (req, res, next) => {
+exports.adminUpdateProfile = (req, res, _next) => {
     const userObject = req.file ?
         {
             ...req.body.user,
@@ -107,15 +107,15 @@ exports.adminUpdateProfile = (req, res, next) => {
         } : { ...req.body };
         db.User.update({...userObject}, {where: {id: req.params.id}})
             .then(() => res.status(200).json({message: "Profil modifié !"}))
-            .catch(error => res.status(403).json({message: 'Modification réservée aux admins !'}))
+            .catch(_error => res.status(403).json({message: 'Modification réservée aux admins !'}))
 };
 
-exports.setUserAsAdmin = (req, res, next) => { 
+exports.setUserAsAdmin = (req, res, _next) => { 
         db.User.findOne({where: {id: req.body.userId}})
             .then((user) => { if(user.isAdmin === true){
                 db.User.update({isAdmin: true}, { where: { id: req.params.id }})
                 .then(() => res.status(200).json({ message: 'utilisateur promu admin !' }))
                 .catch(error => res.status(400).json({ error }))
             }})
-            .catch(error => res.status(403).json({ message: 'Requête réservée aux admins'}))           
+            .catch(_error => res.status(403).json({ message: 'Requête réservée aux admins'}))           
 };

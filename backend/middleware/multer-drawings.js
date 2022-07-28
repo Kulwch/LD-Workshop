@@ -1,7 +1,7 @@
 /**
- * Multer-medias - middleware
+ * Multer-drawings - middleware
  * 
- * Package @multer is used to manage the medias files: save, modify, delete in the images folder
+ * Package @multer is used to manage the drawings files: save, modify, delete in the images folder
  * 
  */
 
@@ -16,7 +16,7 @@ const MIME_TYPES = {
 
 const storage = multer.diskStorage({
   destination: (_req, _file, callback) => {
-    callback(null, 'medias');
+    callback(null, 'drawings');
   },
   filename: (_req, file, callback) => {
     const name = file.originalname.split(' ').join('_');
@@ -25,4 +25,4 @@ const storage = multer.diskStorage({
   }
 });
 
-module.exports = multer({storage: storage}).single('media');
+module.exports = multer({storage: storage}).single('drawing');

@@ -51,7 +51,7 @@ export default {
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("userId", res.data.userId);
           localStorage.setItem("isAdmin", res.data.isAdmin);
-          if (localStorage.getItem("isAdmin") == true) {
+          if (localStorage.getItem("isAdmin")) {
             this.$router.push("/LD-Workshop/Post");
           } else {
             this.$router.push("/LD-Workshop/Home");
