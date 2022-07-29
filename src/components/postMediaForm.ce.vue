@@ -7,6 +7,9 @@
     <button class="btn btn-primary mt-3 mb-3" @click="photoShow = !photoShow">
       Photo
     </button>
+    <button class="btn btn-primary mt-3 mb-3" @click="paintingShow = !paintingShow">
+      Peinture
+    </button>
     <form
       v-if="drawingShow"
       id="formDrawing"
@@ -87,6 +90,46 @@
         Publier
       </button>
     </form>
+    <form
+      v-if="paintingShow"
+      id="formPainting"
+      class="mt-5"
+      @submit.prevent="postPainting()"
+      enctype="multipart/form-data"
+    >
+      <div class="mx-auto w-50 mb-3">
+        <label for="title" class="form-label">Titre :</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Tape ici ton titre..."
+        />
+      </div>
+      <div class="mx-auto w-50 mb-3">
+        <label for="statusText" class="form-label">Texte :</label>
+        <input
+          type="text"
+          class="form-control"
+          id="text"
+          placeholder="Tape ici ton texte..."
+        />
+      </div>
+      <div class="w-50 mx-auto mb-3">
+        <label for="painting" class="form-label pr-1">Fichier à publier :</label>
+        <input
+          type="file"
+          class="form-control-file mx-auto"
+          id="painting"
+          name="painting"
+          ref="painting"
+          v-on:change="handlePaintingFileUpload()"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mb-3" @click.prevent="postPainting">
+        Publier
+      </button>
+    </form>
   </div>
 </template>
 <script>
@@ -97,12 +140,14 @@ export default {
     return {
       drawingShow: false,
       photoShow: false,
+      paintingShow: false,
       userId: localStorage.getItem("userId"),
       title: "",
       text: "",
       imageUrl: "",
       photo: "",
       drawing: "",
+      painting: "",
       token: localStorage.getItem("token"),
     };
   },
@@ -138,6 +183,25 @@ export default {
       formData.append("photo", this.photo);
       axios
         .post("http://localhost:3001/api/photos", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: "Bearer " + this.token,
+          },
+        })
+        .then(() => this.$router.go());
+    },
+    handlePaintingFileUpload() {
+      this.painting = this.$refs.painting.files[0];
+      this.paintingUrl = URL.createObjectURL(this.painting);
+    },
+    postPainting() {
+      const formData = new FormData();
+      formData.append("userId", parseInt(localStorage.getItem("userId")));
+      formData.append("title", document.getElementById("title").value);
+      formData.append("text", document.getElementById("text").value);
+      formData.append("painting", this.painting);
+      axios
+        .post("http://localhost:3001/api/paintings", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: "Bearer " + this.token,

@@ -387,14 +387,28 @@ document the project */
                 data-bs-parent="#menu"
               >
                 <li class="w-100">
-                  <a href="#" class="nav-link text-white px-0">
+                  <router-link
+                    to="/LD-Workshop/galleryDrawings"
+                    class="nav-link text-white px-0"
+                  >
                     <span class="d-none d-sm-inline">Dessins</span>
-                  </a>
+                  </router-link>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-white px-0">
+                  <router-link
+                    to="/LD-Workshop/galleryPhotos"
+                    class="nav-link text-white px-0"
+                  >
                     <span class="d-none d-sm-inline">Photos</span>
-                  </a>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    to="/LD-Workshop/galleryPaintings"
+                    class="nav-link text-white px-0"
+                  >
+                    <span class="d-none d-sm-inline">Peintures</span>
+                  </router-link>
                 </li>
               </ul>
             </li>

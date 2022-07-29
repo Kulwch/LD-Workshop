@@ -19,6 +19,21 @@ const routes =[
     component: () => import('../views/Galerie.vue')
   },
   {
+    path: '/LD-Workshop/galleryPhotos',
+    name: 'galleryPhotos',
+    component: () => import('../views/galleryPhotos.vue')
+  },
+  {
+    path: '/LD-Workshop/galleryDrawings',
+    name: 'galleryDrawings',
+    component: () => import('../views/galleryDrawings.vue')
+  },
+  {
+    path: '/LD-Workshop/galleryPaintings',
+    name: 'galleryPaintings',
+    component: () => import('../views/galleryPaintings.vue')
+  },
+  {
     path: '/LD-Workshop/arts',
     name: 'Arts',
     component: () => import('../views/Arts.vue')

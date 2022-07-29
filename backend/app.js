@@ -5,6 +5,7 @@ const usersRoutes = require('./routes/users');
 const mediasRoutes = require('./routes/medias');
 const drawingsRoutes = require('./routes/drawings');
 const photosRoutes = require('./routes/photos');
+const paintingsRoutes = require('./routes/paintings');
 const commentsRoutes = require('./routes/comments');
 
 const helmet = require('helmet');
@@ -34,11 +35,13 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/medias', express.static(path.join(__dirname, 'medias')));
 app.use('/photos', express.static(path.join(__dirname, 'photos')));
 app.use('/drawings', express.static(path.join(__dirname, 'drawings')));
+app.use('/paintings', express.static(path.join(__dirname, 'paintings')));
 
 app.use('/api/users', usersRoutes);
 app.use('/api/medias', mediasRoutes);
 app.use('/api/photos', photosRoutes);
 app.use('/api/drawings', drawingsRoutes);
+app.use('/api/paintings', paintingsRoutes);
 app.use('/api/comments', commentsRoutes);
 
 module.exports = app;
