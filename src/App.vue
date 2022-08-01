@@ -139,14 +139,28 @@ document the project */
                       data-bs-parent="#menu"
                     >
                       <li class="w-100">
-                        <a href="#" class="nav-link text-dark px-0">
+                        <router-link
+                          to="/LD-Workshop/galleryDrawings"
+                          class="nav-link text-dark px-0"
+                        >
                           <span class="fs-4">Dessins</span>
-                        </a>
+                        </router-link>
                       </li>
                       <li>
-                        <a href="#" class="nav-link text-dark px-0">
+                        <router-link
+                          to="/LD-Workshop/galleryPhotos"
+                          class="nav-link text-dark px-0"
+                        >
                           <span class="fs-4">Photos</span>
-                        </a>
+                        </router-link>
+                      </li>
+                      <li class="w-100">
+                        <router-link
+                          to="/LD-Workshop/galleryPaintings"
+                          class="nav-link text-dark px-0"
+                        >
+                          <span class="fs-4">Peintures</span>
+                        </router-link>
                       </li>
                     </ul>
                   </li>
@@ -394,7 +408,7 @@ document the project */
                     <span class="d-none d-sm-inline">Dessins</span>
                   </router-link>
                 </li>
-                <li>
+                <li class="w-100">
                   <router-link
                     to="/LD-Workshop/galleryPhotos"
                     class="nav-link text-white px-0"
@@ -402,7 +416,7 @@ document the project */
                     <span class="d-none d-sm-inline">Photos</span>
                   </router-link>
                 </li>
-                <li>
+                <li class="w-100">
                   <router-link
                     to="/LD-Workshop/galleryPaintings"
                     class="nav-link text-white px-0"

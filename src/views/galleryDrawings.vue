@@ -9,18 +9,20 @@
         pleines de passion.
       </p>
       <p>Pour voir en taille réelle un dessin, cliquez dessus.</p>
+    </div>
+    <div class="row">
       <div
-        class="col-md-10 mx-auto border border-dark rounded shadow mt-3"
+        class="col-md-5 mx-auto border border-dark rounded shadow mt-3"
         v-for="drawing in drawings.slice().reverse()"
         :key="drawing.id"
       >
         <figure class="h-50 mw-75">
-          <figcaption class="h4 text-danger mt-2">{{ drawing.title }}</figcaption>
+          <figcaption class="h4 text-danger mt-3">{{ drawing.title }}</figcaption>
           <a :href="drawing.drawingUrl" target="_blank"
-            ><img class="w-25" :src="drawing.drawingUrl" alt="drawing"
+            ><img class="w-25 mt-4" :src="drawing.drawingUrl" alt="drawing"
           /></a>
         </figure>
-        <p>{{ drawing.text }}</p>
+        <p class="mt-5">{{ drawing.text }}</p>
         <span v-if="user.isAdmin == true">
           <button
             class="mb-3 btn btn-secondary rounded"

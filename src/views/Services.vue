@@ -4,6 +4,7 @@
       <h1 class="h1">Services</h1>
       <br />
       <h2 class="h2">"Le meilleur de l'humain à votre service"</h2>
+      <p class="h2">Page en construction - A venir bientôt</p>
     </div>
   </div>
 </template>

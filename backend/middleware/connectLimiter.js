@@ -9,9 +9,9 @@ const rateLimit = require("express-rate-limit");
 
 const ConnectAccountLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, 
-  max: 5, 
+  max: 10, 
   message:
-    "5 tentatives de connexion à partir de IP, merci de réessayer d'ici une heure",
+    "10 tentatives de connexion à partir de IP, merci de réessayer d'ici une heure",
   headers: true
 });
 

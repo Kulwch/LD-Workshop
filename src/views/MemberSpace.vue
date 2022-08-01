@@ -12,7 +12,8 @@
         d'expression, ainsi que ces partages d'émotions sur "papier".
       </p>
       <br />
-      <router-link to="/LD-Workshop/Login">Se connecter</router-link>
+      <p class="h2">Page en construction - A venir bientôt</p>
+      <router-link to="/LD-Workshop/Login">Accès administrateur du site</router-link>
     </div>
   </div>
 </template>
@@ -22,6 +23,7 @@ export default {
   data() {
     return {
       token: localStorage.getItem("token"),
+      isAdmin: localStorage.getItem("isAdmin"),
     };
   },
 };

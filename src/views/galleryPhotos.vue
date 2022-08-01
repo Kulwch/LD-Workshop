@@ -9,18 +9,20 @@
         vos réactions.
       </p>
       <p>Pour voir en taille réelle une photo, cliquez dessus.</p>
+    </div>
+    <div class="row">
       <div
-        class="col-md-10 mx-auto border border-dark rounded shadow mt-3"
+        class="col-sm col-md-5 mx-auto border border-dark rounded shadow mt-3"
         v-for="photo in photos.slice().reverse()"
         :key="photo.id"
       >
         <figure class="h-50 mw-75">
-          <figcaption class="h4 text-danger mt-2">{{ photo.title }}</figcaption>
+          <figcaption class="h4 text-danger mt-3">{{ photo.title }}</figcaption>
           <a :href="photo.photoUrl" target="_blank"
-            ><img class="w-25" :src="photo.photoUrl" alt="photo"
+            ><img class="w-25 mt-4" :src="photo.photoUrl" alt="photo"
           /></a>
         </figure>
-        <p>{{ photo.text }}</p>
+        <p class="mt-5">{{ photo.text }}</p>
         <span v-if="user.isAdmin == true">
           <button
             class="mb-3 btn btn-secondary rounded"

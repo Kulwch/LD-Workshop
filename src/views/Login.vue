@@ -37,6 +37,10 @@ export default {
     return {
       email: "",
       password: "",
+      user: {
+        id: localStorage.getItem("userId"),
+        isAdmin: localStorage.getItem("isAdmin"),
+      },
     };
   },
   methods: {
@@ -51,7 +55,7 @@ export default {
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("userId", res.data.userId);
           localStorage.setItem("isAdmin", res.data.isAdmin);
-          if (localStorage.getItem("isAdmin")) {
+          if (localStorage.getItem("isAdmin") == "true") {
             this.$router.push("/LD-Workshop/Post");
           } else {
             this.$router.push("/LD-Workshop/Home");
