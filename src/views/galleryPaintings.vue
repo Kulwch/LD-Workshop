@@ -22,6 +22,7 @@
             ><img class="w-25 mt-4" :src="painting.paintingUrl" alt="painting"
           /></a>
         </figure>
+        <p class="mt-5">{{ painting.category }}</p>
         <p class="mt-5">{{ painting.text }}</p>
         <span v-if="user.isAdmin == true">
           <button

@@ -23,6 +23,7 @@ exports.createPhoto = (req, res, _next) => {
         title: req.body.title,
         text: req.body.text,
         photoUrl: `${req.protocol}://${req.get('host')}/../photos/${req.file.filename}`,
+        category: req.body.category,
     })
         .then(() => res.status(201).json({ message: 'Photo publiée !' }))
         .catch((error) => res.status(400).json({ error }))

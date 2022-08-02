@@ -23,6 +23,7 @@ exports.createPainting = (req, res, _next) => {
         title: req.body.title,
         text: req.body.text,
         paintingUrl: `${req.protocol}://${req.get('host')}/../paintings/${req.file.filename}`,
+        category: req.body.category,
     })
         .then(() => res.status(201).json({ message: 'Peinture publié !' }))
         .catch((error) => res.status(400).json({ error }))

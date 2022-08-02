@@ -46,6 +46,13 @@
           v-on:change="handleDrawingFileUpload()"
         />
       </div>
+      <select id="category" name="category" ref="category">
+        <option default="">Choisir une catégorie:</option>
+        <option value="Enluminure">Graphite</option>
+        <option value="Aquarelle">Crayons couleurs</option>
+        <option value="Acrylique">Charbon</option>
+        <option value="Acrylique">Art digital</option>
+      </select>
       <button type="submit" class="btn btn-primary mb-3" @click.prevent="postDrawing">
         Publier
       </button>
@@ -126,6 +133,15 @@
           v-on:change="handlePaintingFileUpload()"
         />
       </div>
+      <div class="w-50 mx-auto mb-3">
+        <p class="form-label pr-1">Catégorie :</p>
+        <select id="category" name="category" ref="category">
+          <option disabled value="">Choisir une catégorie:</option>
+          <option value="Enluminure">Enluminure</option>
+          <option value="Aquarelle">Aquarelle</option>
+          <option value="Acrylique">Acrylique</option>
+        </select>
+      </div>
       <button type="submit" class="btn btn-primary mb-3" @click.prevent="postPainting">
         Publier
       </button>
@@ -148,6 +164,7 @@ export default {
       photo: "",
       drawing: "",
       painting: "",
+      category: "",
       token: localStorage.getItem("token"),
     };
   },
@@ -162,6 +179,7 @@ export default {
       formData.append("title", document.getElementById("title").value);
       formData.append("text", document.getElementById("text").value);
       formData.append("drawing", this.drawing);
+      formData.append("category", this.$refs.category.value);
       axios
         .post("http://localhost:3001/api/drawings", formData, {
           headers: {
@@ -181,6 +199,7 @@ export default {
       formData.append("title", document.getElementById("title").value);
       formData.append("text", document.getElementById("text").value);
       formData.append("photo", this.photo);
+      formData.append("category", this.$refs.category.value);
       axios
         .post("http://localhost:3001/api/photos", formData, {
           headers: {
@@ -200,6 +219,7 @@ export default {
       formData.append("title", document.getElementById("title").value);
       formData.append("text", document.getElementById("text").value);
       formData.append("painting", this.painting);
+      formData.append("category", this.$refs.category.value);
       axios
         .post("http://localhost:3001/api/paintings", formData, {
           headers: {
