@@ -2,6 +2,7 @@
   <div id="arts" class="row">
     <div class="col">
       <h1 class="h1">Arts</h1>
+      <p>Pages en construction - A venir</p>
     </div>
   </div>
 </template>

@@ -136,7 +136,7 @@
       <div class="w-50 mx-auto mb-3">
         <p class="form-label pr-1">Catégorie :</p>
         <select id="category" name="category" ref="category">
-          <option disabled value="">Choisir une catégorie:</option>
+          <option default="">Choisir une catégorie:</option>
           <option value="Enluminure">Enluminure</option>
           <option value="Aquarelle">Aquarelle</option>
           <option value="Acrylique">Acrylique</option>
@@ -199,7 +199,6 @@ export default {
       formData.append("title", document.getElementById("title").value);
       formData.append("text", document.getElementById("text").value);
       formData.append("photo", this.photo);
-      formData.append("category", this.$refs.category.value);
       axios
         .post("http://localhost:3001/api/photos", formData, {
           headers: {

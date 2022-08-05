@@ -24,13 +24,13 @@
         </figure>
         <p class="mt-5">{{ painting.category }}</p>
         <p class="mt-5">{{ painting.text }}</p>
-        <span v-if="user.isAdmin == true">
+        <span>
           <button
             class="mb-3 btn btn-secondary rounded"
             v-bind="painting"
             @click.prevent="deletePainting(painting.id)"
           >
-            Supprimer la peinture
+            Supprimer cette peinture
           </button>
         </span>
       </div>

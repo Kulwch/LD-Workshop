@@ -1,6 +1,3 @@
-/** *Next step: trying to implement toggling menus on @mouseover *Good thing would be to
-document the project */
-
 <template>
   <div class="d-flex align-items-center shadow-sm bg-dark">
     <img
@@ -73,7 +70,7 @@ document the project */
                 class="d-flex flex-column nav-font align-items-center align-items-sm-start px-3 pt-2 min-vh-100"
               >
                 <router-link
-                  to="/LD-Workshop/Home"
+                  to="/LD-Workshop/"
                   class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"
                 >
                   <span class="fs-4 text-dark">Accueil</span>
@@ -122,7 +119,7 @@ document the project */
                     <button
                       data-bs-target="#submenu2"
                       data-bs-toggle="collapse"
-                      @click="this.$router.push({ path: '/LD-Workshop/galerie' })"
+                      @click="this.$router.push({ path: '/LD-Workshop/gallery' })"
                       class="nav-link text-dark px-0 align-middle"
                     >
                       <i class="fs-4"></i>
@@ -275,7 +272,7 @@ document the project */
                       id="submenu5"
                       data-bs-parent="#menu"
                     >
-                      <li class="w-100">
+                      <!--<li class="w-100">
                         <a href="#" class="nav-link text-dark px-0">
                           <span class="fs-4">Arts</span></a
                         >
@@ -299,7 +296,7 @@ document the project */
                         <a href="#" class="nav-link text-dark px-0">
                           <span class="fs-4">CGV</span></a
                         >
-                      </li>
+                      </li>-->
                       <li>
                         <a href="#" class="nav-link text-dark px-0">
                           <span class="fs-4">Mot de l'artiste</span></a
@@ -338,7 +335,7 @@ document the project */
           class="d-flex flex-column nav-font align-items-center align-items-sm-start px-3 pt-2 min-vh-100"
         >
           <router-link
-            to="/LD-Workshop/Home"
+            to="/LD-Workshop/"
             class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"
           >
             <span class="fs-6 d-none d-sm-inline text-white">Accueil</span>
@@ -384,7 +381,7 @@ document the project */
               <button
                 data-bs-target="#submenu2"
                 data-bs-toggle="collapse"
-                @click="this.$router.push({ path: '/LD-Workshop/galerie' })"
+                @click="this.$router.push({ path: '/LD-Workshop/gallery' })"
                 class="nav-link text-white px-0 align-middle"
               >
                 <i class="fs-4"></i>
@@ -537,7 +534,7 @@ document the project */
                 id="submenu5"
                 data-bs-parent="#menu"
               >
-                <li class="w-100">
+                <!--<li class="w-100">
                   <a href="#" class="nav-link text-white px-0">
                     <span class="d-none d-sm-inline">Arts</span></a
                   >
@@ -561,7 +558,7 @@ document the project */
                   <a href="#" class="nav-link text-white px-0">
                     <span class="d-none d-sm-inline">CGV</span></a
                   >
-                </li>
+                </li>-->
                 <li>
                   <a href="#" class="nav-link text-white px-0">
                     <span class="d-none d-sm-inline">Mot de l'artiste</span></a

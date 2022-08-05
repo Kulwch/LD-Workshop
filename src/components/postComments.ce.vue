@@ -33,7 +33,9 @@
           ref="authorEmail"
           placeholder="Saisissez votre email "
         />
-        <label for="phone" class="form-label mt-2">Téléphone (facultatif) :</label>
+        <label for="phone" class="form-label mt-2"
+          >Téléphone (facultatif) - ne sera pas affiché non plus :</label
+        >
         <input
           class="form-control email w-50 mx-auto"
           name="Phone"

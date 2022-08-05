@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 
 const routes =[
     {
-    path: '/LD-Workshop/home',
+    path: '/LD-Workshop/',
     name: 'Home',
     component: Home
   },
@@ -14,9 +14,9 @@ const routes =[
     component: () => import('../views/Bio.vue')
   },  
   {
-    path: '/LD-Workshop/galerie',
+    path: '/LD-Workshop/gallery',
     name: 'Galerie',
-    component: () => import('../views/Galerie.vue')
+    component: () => import('../views/gallery.vue')
   },
   {
     path: '/LD-Workshop/galleryPhotos',
@@ -43,21 +43,21 @@ const routes =[
     name: 'Login',
     component: () => import('../views/Login.vue')
   },
-  {
+  /*{
     path: '/LD-Workshop/signup',
     name: 'Signup',
     component: () => import('../views/Signup.vue')
-  },
+  },*/
   {
     path: '/LD-Workshop/post',
     name: 'Post',
     component: () => import('../views/Post.vue')
   },
-  {
+  /*{
     path: '/LD-Workshop/registered',
     name: 'Registered',
     component: () => import('../views/Registered.vue')
-  },
+  },*/
   {
     path:'/LD-Workshop/experiences',
     name: 'Experiences',

@@ -12,7 +12,7 @@
         d'expression, ainsi que ces partages d'émotions sur "papier".
       </p>
       <br />
-      <p class="h2">Page en construction - A venir bientôt</p>
+      <p class="h2">Pages en construction - A venir</p>
       <router-link to="/LD-Workshop/Login">Accès administrateur du site</router-link>
     </div>
   </div>

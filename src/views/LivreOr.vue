@@ -23,8 +23,6 @@
             <strong>{{ comment.authorFirstName }} {{ comment.authorLastName }}</strong>
           </span>
           <br />
-          <span>Email: {{ comment.email }}</span
-          >&nbsp;<span v-if="user.isAdmin">Numéro de téléphone: {{ comment.phone }}</span>
         </p>
         <button
           v-if="user.isAdmin"
